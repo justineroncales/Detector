@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Detector.Views.NavPages"
+             BackgroundColor="#112B47">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ImageButton  Grid.Column="0"
+                    VerticalOptions="Center" 
+                    BorderWidth="1.5"
+                    BorderColor="ForestGreen"
+                    CornerRadius="50"
+                    Source="map.png"
+                    Clicked="Button_Clicked"/>
+
+            <ImageButton  Grid.Column="1"
+                    VerticalOptions="Center" 
+                    BorderWidth="1.5"
+                    BorderColor="ForestGreen"
+                    CornerRadius="50"
+                    Source="weather.png"
+                    Clicked="Button_Clicked_1"/>
+
+            <ImageButton  Grid.Row="1"
+                    VerticalOptions="Center" 
+                    BorderWidth="1.5"
+                    BorderColor="ForestGreen"
+                    CornerRadius="50"
+                    Source="helicopter.png"
+                    Clicked="Button_Clicked_2"/>
+
+            <ImageButton Grid.Row="1" Grid.Column="1"
+                    VerticalOptions="Center" 
+                    BorderWidth="1.5"
+                    BorderColor="ForestGreen"
+                    Source="equipment.png"
+                    CornerRadius="50"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

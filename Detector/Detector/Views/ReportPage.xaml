@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Detector.Views.ReportPage"
+             BackgroundColor="#112B47">
+    <ContentPage.Content>
+        <StackLayout Padding="5" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Editor  x:Name="Message"
+                    Placeholder="Message" TextColor="White" PlaceholderColor="Gray"
+                    Keyboard="Plain" AutoSize="TextChanges" MaxLength="180"/>
+            <Button Text="Submit" 
+                    VerticalOptions="Center" 
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    BorderWidth="1.5"
+                    BorderColor="ForestGreen"
+                    CornerRadius="50"
+                    Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
