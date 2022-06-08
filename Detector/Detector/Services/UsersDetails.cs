@@ -9,4 +9,9 @@ namespace Detector.Services
         public string  USERNAME { get; set; }
         public string PASSWORD { get; set; }
     }
+    class UDetails
+    {
+        public int ID { get; set; }
+
+    }
 }

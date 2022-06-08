@@ -7,6 +7,11 @@ using Detector.Maps;
 using System.Collections.Generic;
 using Plugin.Geolocator;
 using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Text;
+using Detector.Models;
+using Detector.Services;
 
 namespace Detector.Views
 {
@@ -23,21 +28,21 @@ namespace Detector.Views
 
             Pin pin1 = new Pin
             {
-                Label = "This is Nasugbu",
+                Label = await GetLocations(1),
                 Address = "Nasugbu",
                 Type = PinType.Place,
                 Position = new Position(14.0940, 120.6890)
             };
             Pin pin2 = new Pin
             {
-                Label = "This is Aga",
+                Label = await GetLocations(2),
                 Address = "Brgy AGA",
                 Type = PinType.Place,
                 Position = new Position(14.0924689, 120.7690493)
             };
             Pin pin3 = new Pin
             {
-                Label = "This is  Balaytigui",
+                Label = await GetLocations(3),
                 Address = "Brgy Balaytigui",
                 Type = PinType.Place,
                 Position = new Position(14.0747, 120.8172)
@@ -45,7 +50,7 @@ namespace Detector.Views
 
             Pin pin4 = new Pin
             {
-                Label = "This is  Banilad ",
+                Label = await GetLocations(4),
                 Address = "Brgy  Banilad ",
                 Type = PinType.Place,
                 Position = new Position(14.0730, 120.7408)
@@ -53,15 +58,16 @@ namespace Detector.Views
 
             Pin pin5 = new Pin
             {
-                Label = "This is  Barangay 1 ",
+                Label = await GetLocations(5),
                 Address = "Brgy  Barangay 1 ",
                 Type = PinType.Place,
+                
                 Position = new Position(14.0752, 120.6296)
             };
 
             Pin pin6 = new Pin
             {
-                Label = "This is  Barangay 10",
+                Label = await GetLocations(6),
                 Address = "Brgy  Barangay 10 ",
                 Type = PinType.Place,
                 Position = new Position(14.0694, 120.6301)
@@ -69,7 +75,7 @@ namespace Detector.Views
 
             Pin pin7 = new Pin
             {
-                Label = "This is  Barangay 11",
+                Label = await GetLocations(7),
                 Address = "Brgy  Barangay 11 ",
                 Type = PinType.Place,
                 Position = new Position(14.0604, 120.6344)
@@ -77,7 +83,7 @@ namespace Detector.Views
 
             Pin pin8 = new Pin
             {
-                Label = "This is  Barangay 12",
+                Label = await GetLocations(8),
                 Address = "Brgy  Barangay 12 ",
                 Type = PinType.Place,
                 Position = new Position(14.0639, 120.6358)
@@ -85,7 +91,7 @@ namespace Detector.Views
 
             Pin pin9 = new Pin
             {
-                Label = "This is  Barangay 2",
+                Label = await GetLocations(9),
                 Address = "Brgy  Barangay 2 ",
                 Type = PinType.Place,
                 Position = new Position(14.0783, 120.6300)
@@ -93,7 +99,7 @@ namespace Detector.Views
 
             Pin pin10 = new Pin
             {
-                Label = "This is  Barangay 3",
+                Label = await GetLocations(10),
                 Address = "Brgy  Barangay 3",
                 Type = PinType.Place,
                 Position = new Position(14.0724, 120.6307)
@@ -101,7 +107,7 @@ namespace Detector.Views
 
             Pin pin11 = new Pin
             {
-                Label = "This is  Barangay 4",
+                Label = await GetLocations(11),
                 Address = "Brgy  Barangay 4",
                 Type = PinType.Place,
                 Position = new Position(14.0735, 120.6343)
@@ -109,7 +115,7 @@ namespace Detector.Views
 
             Pin pin12 = new Pin
             {
-                Label = "This is  Barangay 5",
+                Label = await GetLocations(12),
                 Address = "Brgy  Barangay 5",
                 Type = PinType.Place,
                 Position = new Position(14.0756, 120.6343)
@@ -117,7 +123,7 @@ namespace Detector.Views
 
             Pin pin13 = new Pin
             {
-                Label = "This is  Barangay 6",
+                Label = await GetLocations(13),
                 Address = "Brgy  Barangay 6",
                 Type = PinType.Place,
                 Position = new Position(14.0684, 120.6374)
@@ -125,7 +131,7 @@ namespace Detector.Views
 
             Pin pin14 = new Pin
             {
-                Label = "This is  Barangay 7",
+                Label = await GetLocations(14),
                 Address = "Brgy  Barangay 7",
                 Type = PinType.Place,
                 Position = new Position(14.0694, 120.6351)
@@ -133,7 +139,7 @@ namespace Detector.Views
 
             Pin pin15 = new Pin
             {
-                Label = "This is  Barangay 8",
+                Label = await GetLocations(15),
                 Address = "Brgy  Barangay 8",
                 Type = PinType.Place,
                 Position = new Position(14.0698, 120.6337)
@@ -141,7 +147,7 @@ namespace Detector.Views
 
             Pin pin16 = new Pin
             {
-                Label = "This is  Barangay 9",
+                Label = await GetLocations(16),
                 Address = "Brgy  Barangay 9",
                 Type = PinType.Place,
                 Position = new Position(14.0695, 120.6324)
@@ -149,7 +155,7 @@ namespace Detector.Views
 
             Pin pin17 = new Pin
             {
-                Label = "This is  Bilaran",
+                Label = await GetLocations(17),
                 Address = "This is  Bilaran",
                 Type = PinType.Place,
                 Position = new Position(14.0487, 120.6846)
@@ -157,7 +163,7 @@ namespace Detector.Views
 
             Pin pin18 = new Pin
             {
-                Label = "This is  Bucana",
+                Label = await GetLocations(18),
                 Address = "This is  Bucana",
                 Type = PinType.Place,
                 Position = new Position(14.0678, 120.6267)
@@ -165,7 +171,7 @@ namespace Detector.Views
 
             Pin pin19 = new Pin
             {
-                Label = "This is  Bulihan",
+                Label = await GetLocations(19),
                 Address = "This is  Bulihan",
                 Type = PinType.Place,
                 Position = new Position(14.1552, 120.6540)
@@ -173,7 +179,7 @@ namespace Detector.Views
 
             Pin pin20 = new Pin
             {
-                Label = "This is  Bunducan",
+                Label = await GetLocations(20),
                 Address = "This is  Bunducan",
                 Type = PinType.Place,
                 Position = new Position(14.1069, 120.6521)
@@ -181,7 +187,7 @@ namespace Detector.Views
 
             Pin pin21 = new Pin
             {
-                Label = "This is  Butucan",
+                Label = await GetLocations(21),
                 Address = "This is  Butucan",
                 Type = PinType.Place,
                 Position = new Position(14.1394, 120.6805)
@@ -189,7 +195,7 @@ namespace Detector.Views
              
             Pin pin22 = new Pin
             {
-                Label = "This is  Calayo",
+                Label = await GetLocations(22),
                 Address = "This is  Calayo",
                 Type = PinType.Place,
                 Position = new Position(14.1461, 120.6141)
@@ -197,7 +203,7 @@ namespace Detector.Views
 
             Pin pin23 = new Pin
             {
-                Label = "This is  Catandaan",
+                Label = await GetLocations(23),
                 Address = "This is  Catandaan",
                 Type = PinType.Place,
                 Position = new Position(14.0804, 120.6815)
@@ -205,7 +211,7 @@ namespace Detector.Views
 
             Pin pin24 = new Pin
             {
-                Label = "This is  Cogunan",
+                Label = await GetLocations(24),
                 Address = "This is  Cogunan",
                 Type = PinType.Place,
                 Position = new Position(14.0625, 120.6555)
@@ -213,7 +219,7 @@ namespace Detector.Views
 
             Pin pin25 = new Pin
             {
-                Label = "This is  Dayap",
+                Label = await GetLocations(25),
                 Address = "This is  Dayap",
                 Type = PinType.Place,
                 Position = new Position(14.1013, 120.6627)
@@ -221,7 +227,7 @@ namespace Detector.Views
 
             Pin pin26 = new Pin
             {
-                Label = "This is  Kaylaway",
+                Label = await GetLocations(26),
                 Address = "This is  Kaylaway",
                 Type = PinType.Place,
                 Position = new Position(14.0747, 120.8172)
@@ -230,7 +236,7 @@ namespace Detector.Views
 
             Pin pin27 = new Pin
             {
-                Label = "This is  Kayrilaw",
+                Label = await GetLocations(27),
                 Address = "This is  Kayrilaw",
                 Type = PinType.Place,
                 Position = new Position(14.1027, 120.7819)
@@ -238,7 +244,7 @@ namespace Detector.Views
 
             Pin pin28 = new Pin
             {
-                Label = "This is  Latag",
+                Label = await GetLocations(28),
                 Address = "This is  Latag",
                 Type = PinType.Place,
                 Position = new Position(14.1164, 120.7124)
@@ -246,7 +252,7 @@ namespace Detector.Views
 
             Pin pin29 = new Pin
             {
-                Label = "This is  Looc",
+                Label = await GetLocations(29),
                 Address = "This is  Looc",
                 Type = PinType.Place,
                 Position = new Position(14.1641, 120.6295)
@@ -254,7 +260,7 @@ namespace Detector.Views
 
             Pin pin30 = new Pin
             {
-                Label = "This is  Lumbangan",
+                Label = await GetLocations(30),
                 Address = "This is  Lumbangan",
                 Type = PinType.Place,
                 Position = new Position(14.0494, 120.6597)
@@ -262,7 +268,7 @@ namespace Detector.Views
 
             Pin pin31 = new Pin
             {
-                Label = "This is  Malapad na Bato",
+                Label = await GetLocations(31),
                 Address = "This is  Malapad na Bato",
                 Type = PinType.Place,
                 Position = new Position(14.1116, 120.6828)
@@ -270,7 +276,7 @@ namespace Detector.Views
 
             Pin pin32 = new Pin
             {
-                Label = "This is  Mataas na Pulo",
+                Label = await GetLocations(32),
                 Address = "This is  Mataas na Pulo",
                 Type = PinType.Place,
                 Position = new Position(14.1122, 120.7452)
@@ -278,7 +284,7 @@ namespace Detector.Views
 
             Pin pin33 = new Pin
             {
-                Label = "This is  Maugat",
+                Label = await GetLocations(33),
                 Address = "This is  Maugat",
                 Type = PinType.Place,
                 Position = new Position(14.0868, 120.6767)
@@ -286,7 +292,7 @@ namespace Detector.Views
 
             Pin pin34 = new Pin
             {
-                Label = "This is  Munting Indan",
+                Label = await GetLocations(34),
                 Address = "This is  Munting Indan",
                 Type = PinType.Place,
                 Position = new Position(14.1031, 120.6985)
@@ -294,7 +300,7 @@ namespace Detector.Views
 
             Pin pin35 = new Pin
             {
-                Label = "This is Natipuan",
+                Label = await GetLocations(35),
                 Address = "This is  Natipuan",
                 Type = PinType.Place,
                 Position = new Position(14.1198, 120.6236)
@@ -302,7 +308,7 @@ namespace Detector.Views
 
             Pin pin36 = new Pin
             {
-                Label = "This is Pantalan",
+                Label = await GetLocations(36),
                 Address = "This is  Pantalan",
                 Type = PinType.Place,
                 Position = new Position(14.0907, 120.6323)
@@ -310,7 +316,7 @@ namespace Detector.Views
 
             Pin pin37 = new Pin
             {
-                Label = "This is Papaya",
+                Label = await GetLocations(37),
                 Address = "This is  Papaya",
                 Type = PinType.Place,
                 Position = new Position(14.1919, 120.6096)
@@ -318,7 +324,7 @@ namespace Detector.Views
 
             Pin pin38 = new Pin
             {
-                Label = "This is Putat",
+                Label = await GetLocations(38),
                 Address = "This is  Putat",
                 Type = PinType.Place,
                 Position = new Position(14.0788, 120.6527)
@@ -326,7 +332,7 @@ namespace Detector.Views
 
             Pin pin39 = new Pin
             {
-                Label = "This is Reparo",
+                Label = await GetLocations(39),
                 Address = "This is  Reparo",
                 Type = PinType.Place,
                 Position = new Position(14.0728, 120.6923)
@@ -334,7 +340,7 @@ namespace Detector.Views
 
             Pin pin40 = new Pin
             {
-                Label = "This is Talangan",
+                Label = await GetLocations(40),
                 Address = "This is  Talangan",
                 Type = PinType.Place,
                 Position = new Position(14.0777, 120.6358)
@@ -342,7 +348,7 @@ namespace Detector.Views
 
             Pin pin41 = new Pin
             {
-                Label = "This is Tumalim",
+                Label = await GetLocations(41),
                 Address = "This is  Tumalim",
                 Type = PinType.Place,
                 Position = new Position(14.0786, 120.7224)
@@ -350,7 +356,7 @@ namespace Detector.Views
 
             Pin pin42 = new Pin
             {
-                Label = "This is Utod",
+                Label = await GetLocations(42),
                 Address = "This is  Utod",
                 Type = PinType.Place,
                 Position = new Position(14.1195, 120.6479)
@@ -358,7 +364,7 @@ namespace Detector.Views
 
             Pin pin43 = new Pin
             {
-                Label = "This is Wawa",
+                Label = await GetLocations(43),
                 Address = "This is  Wawa",
                 Type = PinType.Place,
                 Position = new Position(14.0824, 120.6244)
@@ -495,7 +501,25 @@ namespace Detector.Views
 
         private async void Pin36_MarkerClicked(object sender, PinClickedEventArgs e)
         {
-            await DisplayAlert("Barangay Pantalan", "Minimal Raindall", "OK");
+            string response = await GetLocations(36);
+
+            if (response == "High")
+            {
+                response = "Heave Rainfall";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Minimal Rainfall";
+            }
+            else
+            {
+                response = "Normal";
+            }
+            await DisplayAlert("Barangay Pantalan", response, "OK");
         }
 
         private async void Pin35_MarkerClicked(object sender, PinClickedEventArgs e)
@@ -635,42 +659,218 @@ namespace Detector.Views
 
         private async void Pin8_MarkerClicked(object sender, PinClickedEventArgs e)
         {
-            await DisplayAlert("Barangay 12", "Minimal Raindall", "OK");
+            string response = await GetLocations(8);
+
+            if (response == "High")
+            {
+                response = "Heave Rainfall";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Minimal Rainfall";
+            }
+            else
+            {
+                response = "Normal";
+            }
+            await DisplayAlert("Barangay 12", response, "OK");
         }
 
         private async void Pin7_MarkerClicked(object sender, PinClickedEventArgs e)
         {
-            await DisplayAlert("Barangay 11", "Minimal Raindall", "OK");
+            string response = await GetLocations(7);
+
+            if (response == "High")
+            {
+                response = "Heave Rainfall";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Minimal Rainfall";
+            }
+            else
+            {
+                response = "Normal";
+            }
+            await DisplayAlert("Barangay 11", response, "OK");
         }
 
         private async void Pin6_MarkerClicked(object sender, PinClickedEventArgs e)
         {
-            await DisplayAlert("Barangay 10", "Minimal Raindall", "OK");
+            string response = await GetLocations(6);
+
+            if (response == "High")
+            {
+                response = "Heave Rainfall";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Minimal Rainfall";
+            }
+            else
+            {
+                response = "Normal";
+            }
+            await DisplayAlert("Barangay 10", response, "OK");
         }
 
         private async void Pin5_MarkerClicked(object sender, PinClickedEventArgs e)
         {
-            await DisplayAlert("Barangay 1", "Minimal Raindall", "OK");
+            string response = await GetLocations(5);
+
+            if (response == "High")
+            {
+                response = "Heave Rainfall";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Minimal Rainfall";
+            }
+            else
+            {
+                response = "Normal";
+            }
+            await DisplayAlert("Barangay 1", response, "OK");
         }
 
         private async void Pin4_MarkerClicked(object sender, PinClickedEventArgs e)
         {
-            await DisplayAlert("Brgy Banilad", "Minimal Raindall", "OK");
+            string response = await GetLocations(4);
+
+            if (response == "High")
+            {
+                response = "Heave Rainfall";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Minimal Rainfall";
+            }
+            else
+            {
+                response = "Normal";
+            }
+            await DisplayAlert("Brgy Banilad", response, "OK");
         }
 
         private async void Pin3_MarkerClicked(object sender, PinClickedEventArgs e)
         {
-            await DisplayAlert("Brgy Balaytigui", "Minimal Raindall", "OK");
+            string response = await GetLocations(3);
+
+            if (response == "High")
+            {
+                response = "Heave Rainfall";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Minimal Rainfall";
+            }
+            else
+            {
+                response = "Normal";
+            }
+            await DisplayAlert("Brgy Balaytigui", response, "OK");
         }
 
         private async void Pin2_MarkerClicked(object sender, PinClickedEventArgs e)
         {
-            await DisplayAlert("Brgy AGA", "Minimal Raindall", "OK");
+            string response = await GetLocations(2);
+
+            if (response == "High")
+            {
+                response = "Heave Rainfall";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Minimal Rainfall";
+            }
+            else
+            {
+                response = "Normal";
+            }
+            await DisplayAlert("Brgy AGA", response, "OK");
         }
 
         private async void Pin1_MarkerClicked(object sender, PinClickedEventArgs e)
         {
-            await DisplayAlert("Nasugbu", "Heave Rainfall", "OK");
+            string response = await GetLocations(1);
+
+            if (response == "High")
+            {
+                response = "Heave Rainfall";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Minimal Rainfall";
+            }
+            else
+            {
+                response = "Normal";
+            }
+
+            await DisplayAlert("Nasugbu", response, "OK");
+        }
+
+        public async Task<string> GetLocations(int ID)
+        {
+            var response = string.Empty;
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage result = await client.GetAsync("http://www.waterdetector.somee.com/Mobile/GetLocations?ID="+ ID);
+                if (result.IsSuccessStatusCode)
+                {
+                   string res = await result.Content.ReadAsStringAsync();
+                    response = JsonConvert.DeserializeObject<string>(res);
+                }
+            }
+            if (response == "High")
+            {
+                response = "Danger";
+            }
+            else if (response == "Low")
+            {
+                response = "Normal";
+            }
+            else if (response == "Medium")
+            {
+                response = "Critical";
+            }
+            else {
+                response = "Normal";
+            }
+
+            return response;
         }
     }
 }

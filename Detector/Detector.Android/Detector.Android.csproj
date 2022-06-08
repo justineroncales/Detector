@@ -110,16 +110,16 @@
     <AndroidResource Include="Resources\drawable\Sample.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\weather.png" />
+    <AndroidResource Include="Resources\drawable\helicopter.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\map.png" />
+    <AndroidResource Include="Resources\drawable\equipment.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\equipment.png" />
+    <AndroidResource Include="Resources\drawable\map.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\helicopter.png" />
+    <AndroidResource Include="Resources\drawable\weather.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
