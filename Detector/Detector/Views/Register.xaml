@@ -5,7 +5,9 @@
              BackgroundColor="#112B47">
     <ContentPage.Content NavigationPage.HasBackButton="False">
         <StackLayout Padding="10" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image Source="background.png" WidthRequest="500" HeightRequest="200"></Image>
             <StackLayout Orientation="Horizontal">
+               
                 <Entry x:Name="FName" Placeholder="First Name" TextColor="White" PlaceholderColor="Gray"></Entry>
                 <Entry x:Name="LName" Placeholder="Last Name" TextColor="White" PlaceholderColor="Gray"></Entry>
             </StackLayout>

@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static Android.Provider.SyncStateContract;
 
 namespace Detector.Views
 {

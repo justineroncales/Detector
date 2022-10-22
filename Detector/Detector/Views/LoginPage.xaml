@@ -9,7 +9,7 @@
              BackgroundColor="#112B47">
     <ContentPage.Content NavigationPage.HasBackButton="False">
         <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-            <Image Source="Sample.png" WidthRequest="180" HeightRequest="180"></Image>
+            <Image Source="background.png" WidthRequest="500" HeightRequest="200"></Image>
             <Entry Placeholder="UserName" x:Name="UserName" TextColor="White" PlaceholderColor="Gray"></Entry>
             <Entry Placeholder="Password" x:Name="Password" IsPassword="True" TextColor="White" PlaceholderColor="Gray"></Entry>
            

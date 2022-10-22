@@ -5,6 +5,7 @@
              BackgroundColor="#112B47">
     <ContentPage.Content>
         <StackLayout Padding="5" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image Source="background.png" WidthRequest="500" HeightRequest="200"></Image>
             <Editor  x:Name="Message"
                     Placeholder="Message" TextColor="White" PlaceholderColor="Gray"
                     Keyboard="Plain" AutoSize="TextChanges" MaxLength="180"/>
