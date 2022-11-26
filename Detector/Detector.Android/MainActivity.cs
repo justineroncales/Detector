@@ -5,6 +5,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Plugin.CurrentActivity;
+using Xamarin.Forms.GoogleMaps.Android;
 
 namespace Detector.Droid
 {
@@ -20,6 +21,12 @@ namespace Detector.Droid
             Xamarin.FormsMaps.Init(this, savedInstanceState);
             
             LoadApplication(new App());
+
+            var platformConfig = new PlatformConfig
+            {
+                BitmapDescriptorFactory = new BitmapConfig()
+            };
+            Xamarin.FormsGoogleMaps.Init(this, savedInstanceState, platformConfig);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

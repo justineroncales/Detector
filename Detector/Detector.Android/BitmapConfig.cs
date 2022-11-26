@@ -1,0 +1,26 @@
+﻿using Detector.Droid;
+using Xamarin.Forms.GoogleMaps;
+using Xamarin.Forms.GoogleMaps.Android.Factories;
+using AndroidBitmapDescriptor = Android.Gms.Maps.Model.BitmapDescriptor;
+using AndroidBitmapDescriptorFactory = Android.Gms.Maps.Model.BitmapDescriptorFactory;
+
+public sealed class BitmapConfig : IBitmapDescriptorFactory
+{
+    public AndroidBitmapDescriptor ToNative(BitmapDescriptor descriptor)
+    {
+        int iconId = 0;
+        switch (descriptor.Id)
+        {
+            case "heavy":
+                iconId = Resource.Drawable.heavy;
+                break;
+            case "umbrella":
+                iconId = Resource.Drawable.umbrella;
+                break;
+            case "sun":
+                iconId = Resource.Drawable.sun;
+                break;
+        }
+        return AndroidBitmapDescriptorFactory.FromResource(iconId);
+    }
+}
