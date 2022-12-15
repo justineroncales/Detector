@@ -32,5 +32,9 @@ namespace Detector.Views
         {
             await Navigation.PushAsync(new ReportPage(_username), false);
         }
+        private async void Button_Clicked_3(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Monitoring(), false);
+        }
     }
 }

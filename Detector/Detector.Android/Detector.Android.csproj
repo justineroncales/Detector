@@ -75,7 +75,7 @@
       <Version>3.4.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Maps">
-      <Version>117.0.0</Version>
+      <Version>117.0.1.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
