@@ -7,9 +7,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using RestSharp;
 
 namespace Detector.Views
 {
@@ -53,6 +53,13 @@ namespace Detector.Views
                     if (response.IsSuccessStatusCode)
                     {
                         await DisplayAlert("Success", "Report successfull sent", "ok");
+
+                        Data data = new Data
+                        {
+                            recipient = "09562447811",
+                            message = Message.Text
+                        };
+                        Sendnotification(data);
                     }
 
                 }
@@ -66,6 +73,16 @@ namespace Detector.Views
                 }
 
             }
+        }
+        private void Sendnotification(Data data)
+        {
+            string serializedObject = JsonConvert.SerializeObject(data);
+            var client = new RestSharp.RestClient("https://api.sms.fortres.net/v1/messages");
+            var request = new RestRequest("https://api.sms.fortres.net/v1/messages", Method.Post);
+            request.AddHeader("Authorization", "Basic NTFhYzRiM2ItMjJhMC00Y2Y4LWFiN2UtNzUwZWQ5MTE2NDMzOlNTWURKZDZIdFU1Q1RpZ3A1cGdseFJLSTRlclhaVk9kSDlKc2R0MXU=");
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("application/json", serializedObject, ParameterType.RequestBody);
+            var response = client.Execute(request);
         }
     }
 }
